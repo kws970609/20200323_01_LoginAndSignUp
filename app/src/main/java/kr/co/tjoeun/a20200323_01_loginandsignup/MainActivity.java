@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -38,6 +39,14 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+
+        binding.signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //        체크박스에 체크가 될때 (변화가 있을때) 마다
 //        체크 여부를 저장.

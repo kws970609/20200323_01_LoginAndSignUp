@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -31,18 +31,20 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="ID"/>
+
              <EditText
                  android:id="@+id/emailEdt"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:hint="이메일 양식으로 입력"
-                 android:inputType="textEmailAddress"/>
+                 android:inputType="textEmailAddress" />
 
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="Password"/>
              <EditText
+                 android:id="@+id/pwEdt"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:hint="비밀번호 입력"

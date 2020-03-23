@@ -21,19 +21,30 @@ public class ContextUtil {
 //    해당하목의 값을 저장setter/ 조회하는 메쏘드getter 추가.
 
 //    setter
-    public static void setEmail(Context context, String email) {
+        public static void setEmail(Context context, String email) {
 
 //        메모장 이용해서 값을 기록 => 메모장 파일 오픈
 //          메모장은 context를 이용해서 오픈=> context 변수도 파라미터로 받아야함.
 
 //        메모장을 열때 1) 어떤 메모장을 열지 2) 어떤 모드로 열지 -> Contet.Mode_Private
 
-        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+            SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
 
 //        열린 메모장에 항목(key)/(value)값 저장
-        pref.edit().putString(EMAIL, email ).apply();
+            pref.edit().putString(EMAIL, email ).apply();
 
 
+    }
+
+//    getter
+
+    public static String getEmail(Context context) {
+//            메모장을 열어야 뭐라고 적혀있는지 확인 가능.
+        SharedPreferences pref = context.getSharedPreferences(prefName,Context.MODE_PRIVATE);
+
+//        EMAIL 항목에 적혀있는값 확인해서 return처리
+//        저장된 값이 없다면 빈칸으로 주도록 처리.
+            return pref.getString(EMAIL, "");
     }
 
 }

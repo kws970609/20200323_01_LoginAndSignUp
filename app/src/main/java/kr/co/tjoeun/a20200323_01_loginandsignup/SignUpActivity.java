@@ -11,6 +11,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.jar.Attributes;
+
 import kr.co.tjoeun.a20200323_01_loginandsignup.databinding.ActivitySignUpBinding;
 import kr.co.tjoeun.a20200323_01_loginandsignup.utils.ServerUtil;
 
@@ -54,6 +56,21 @@ public class SignUpActivity extends BaseActivity {
                             int code = json.getInt("code");
 
                             if (code == 200) {
+//                                회원가입 성공 케이스
+
+                                JSONObject data = json.getJSONObject("data");
+                                JSONObject user = data.getJSONObject("user");
+
+                                final String nmae = user.getString("name");
+
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(mContext, String.format("%s님 환영 합니다!",nmae),Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+
 
                             }
                             else {

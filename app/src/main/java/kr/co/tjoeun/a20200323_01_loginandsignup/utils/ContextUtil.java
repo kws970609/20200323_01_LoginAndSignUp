@@ -11,6 +11,8 @@ public class ContextUtil {
 //    항목 명도 자동완성 지원 할수 있도록 미리 변수화.
     private static final String EMAIL = "EAMIL";
 
+    private static final String ID_CHECK = "ID_CHECK";
+
 
 //    static : 누가하던지 중요하지않음. static 안에서쓰는 애들은 무조건 static이여야함
 //    프로그램 시작시 제일먼저 별도로 생성
@@ -46,5 +48,17 @@ public class ContextUtil {
 //        저장된 값이 없다면 빈칸으로 주도록 처리.
             return pref.getString(EMAIL, "");
     }
+
+    public static void setIdCheck(Context context, boolean  isCheck) {
+            SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+            pref.edit().putBoolean(ID_CHECK, isCheck).apply();
+    }
+
+    public static boolean isIdCheck(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        return pref.getBoolean(ID_CHECK, true);
+
+    }
+
 
 }

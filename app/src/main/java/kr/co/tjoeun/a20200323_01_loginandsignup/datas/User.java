@@ -32,7 +32,7 @@ public class User implements Serializable {
     }
 
 
-    public User(int id, String loginId, String name, String phone, String memo) {
+    public User() {
         this.id = id;
         this.loginId = loginId;
         this.name = name;
